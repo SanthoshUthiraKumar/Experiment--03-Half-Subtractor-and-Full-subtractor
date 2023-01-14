@@ -4,8 +4,9 @@
 To design a half subtractor and full subtractor circuit and verify its truth table in Quartus using Verilog programming.
 
 ## Equipments Required:
-## Hardware – PCs, Cyclone II , USB flasher
-## Software – Quartus prime
+## Hardware – PCs, Cyclone II , USB flasher.
+## Software – Quartus prime.
+
 ## Theory
 Subtractor circuits take two binary numbers as input and subtract one binary number input from the other binary number input. Similar to adders, it gives out two outputs, difference and borrow (carry-in the case of Adder). There are two types of subtractors.
 
@@ -26,29 +27,59 @@ A full subtractor is a combinational circuit that performs subtraction involving
 Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
 ## Procedure
+### Using xor ,and,not gates and wires,construct Half Subtractor. 
 
+### Repeat same steps to construct Full Subtractor
 
+### Find RTL logic and timing diagram for all flipflops.
 
-Write the detailed procedure here 
-
+### End the program
 
 ## Program:
-/*
+```
 Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: Santhosh U
+RegisterNumber: 22009224
+```
+### Half Subtractor
+```
+module HalfSubtractor(A,B,Diff,Borrow);
+input A,B;
+output Diff,Borrow;
+wire x;
+xor (Diff, A,B);
+not(x,A);
+and(Borrow,x,B);
+endmodule
+```
+### Full Subtractor
+```
+module FullSubtractor(A,B,C,Diff,Borrow);
+input A,B,C;
+output Diff,Borrow;
+wire p;
+assign Diff = ((A^B)^C);
+not(p,A);
+assign Borrow = ((p&B)|(p&C)|(B&C));
+endmodule
+```
 
 ## Output:
-
+## Half Subtractor
 ## Truthtable
-
-
-
+![images](HalfSubTT.png)
 ##  RTL realization
-
-
+![images](HalfSubtractorRTL.png)
 ## Timing diagram 
+![images](HalfSubtractorSimulation.png)
+
+## Full Subtractor
+## Truthtable
+![images](FullSubTT.png)
+##  RTL realization
+![images](FullSubtractorRTL.png)
+## Timing diagram 
+![images](FullSubtractorSimulation.png)
 
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
