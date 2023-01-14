@@ -31,7 +31,7 @@ Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
 ### Repeat same steps to construct Full Subtractor
 
-### Find RTL logic and timing diagram for all flipflops.
+### Find RTL logic and timing diagram for both Subtractors
 
 ### End the program
 
